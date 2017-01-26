@@ -1,7 +1,7 @@
 
 from time import time
 from timer import Timer
-
+from input_screen import *
 
 SIP_SIZE = 0.04
 MALE_FACTOR = 0.68
@@ -37,7 +37,7 @@ class Player:
 
 def addPlayer(disp):
     name = Input_field(disp, "Name", False)
-    gender = Select_field(disp, "Gender", ["Man","Woman"])
-    weight = Input_field(disp, "Weight in kg", True)
+    gender = Select_field(disp, "Gender", ["male","female"])
+    weight = int(Input_field(disp, "Weight in kg", True)) * 1000
     disp.fill((0, 0, 0))
     return Player(name,gender,weight)

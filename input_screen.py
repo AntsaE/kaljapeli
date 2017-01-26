@@ -27,7 +27,6 @@ def Input_field(disp, ask, digits_only):
 					return value
 
 		screen.fill((0, 0, 0))
-		screen.fill((50, 0, 0))
 
 		block = font.render(value, True, (255, 255, 255))
 		rect = block.get_rect()
@@ -70,7 +69,6 @@ def Select_field(disp, question, options):
 					return options[selection]
 
 		screen.fill((0, 0, 0))
-		screen.fill((50, 0, 0))
 
 		for i in range(len(options)):
 			block_width = screen.get_width()/len(options)
