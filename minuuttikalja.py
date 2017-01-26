@@ -6,6 +6,7 @@ from timer import Timer
 from player import Player
 from input_screen import *
 from player import *
+from game_logic import *
 
 
 def main():
@@ -42,7 +43,7 @@ def main():
     nikoliina = Player('Nikoliina', 'female', 64500, 0.02, (200,0,100))
     petsku = Player('Petsku', 'male', 90000, 0.1, (240,100,20))
 
-    players = [niko, oskari, petsku, nikoliina]
+    players.extend([niko, oskari, petsku, nikoliina])
 
     game_mode = ClassicMinuteBeerMode(players)
 
@@ -55,7 +56,7 @@ def main():
         game_mode.update_game()
         drawer.draw_count_down()
         pg.display.flip()
-        
+
     Timer.reset_clock()
     Timer.round_time = 60
     #Main loop
