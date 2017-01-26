@@ -3,6 +3,7 @@ import sys
 from time import time
 from drawer import *
 from timer import Timer
+from player import Player
 
 from input_screen import *
 from player import *
@@ -39,9 +40,14 @@ def main():
     pg.mixer.init()
     laser_beam_sound = pg.mixer.Sound("laser_beam.wav")
 
-    timer = Timer(10)
-    timer.start_clock()
-    drawer = Drawer(main_surface, timer)
+    Timer.start_clock()
+    Timer.circle_time = 10
+
+    oskari = Player('Oskari', 'male', 85000, 0.05, (0,255,0))
+    niko = Player('Niko', 'male', 64500, 0.02, (200,0,100))
+    players = [niko, oskari]
+
+    drawer = Drawer(main_surface, players)
 
     while True:
         

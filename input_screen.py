@@ -25,8 +25,10 @@ def Input_field(disp, ask, digits_only):
 					value = value[:-1]
 				elif evt.key == K_RETURN:
 					return value
+
 		screen.fill((0, 0, 0))
 		screen.fill((50, 0, 0))
+
 		block = font.render(value, True, (255, 255, 255))
 		rect = block.get_rect()
 		rect.center = screen.get_rect().center
@@ -84,4 +86,3 @@ def Select_field(disp, question, options):
 		screen.blit(fontobject.render(question, 1, (255,255,255)), (screen.get_width()/2-fontobject.size(question)[0]/2, screen.get_height()/2-75))
 		disp.blit(screen, (disp.get_width()/2-screen.get_width()/2,disp.get_height()/2-screen.get_height()/2))
 		pygame.display.flip()
-
